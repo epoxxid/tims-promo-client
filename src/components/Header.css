@@ -1,0 +1,21 @@
+.Header {
+    background-color: #fff;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 5px solid #0d284b;
+    border-bottom: 1px solid #0d284b;
+    color: #0d284b;
+    padding: 10px;
+}
+
+.Header-logo {
+    width: 80px;
+    margin-right: 20px;
+}
+
+.Header-title {
+    color: #999;
+    font-size: 2em;
+}
