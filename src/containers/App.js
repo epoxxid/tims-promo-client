@@ -20,36 +20,17 @@ class App extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.store.dispatch(loadOffers(offers)); // Hide loading indicator & load offers
-    }, 3000);
+    }, 1000);
   }
 
-  getOffers() {
-    const {offers, filter} = this.store.getState();
 
-    if (!filter) return offers;
-
-    return offers.filter(offer => {
-      let isValid = true;
-
-      if (filter.activeOnly) {
-        isValid = isValid && offer.validTo > new Date();
-      }
-
-      if (filter.maxPrice) {
-        isValid = isValid && offer.fromPrice <= filter.maxPrice;
-      }
-
-      return isValid;
-    });
-  };
 
   applyFilter(filter) {
-    console.log(filter);
     this.store.dispatch(applyFilter(filter));
   };
 
   render() {
-    const {loading, filter} = this.store.getState();
+    const {loading, filter, offers} = this.store.getState();
 
     return (
       <div className="App">
@@ -59,7 +40,7 @@ class App extends React.Component {
           onFilterSet={(f) => this.applyFilter(f)}/>
         <OfferList
           loading={loading}
-          offers={this.getOffers()}
+          offers={offers}
         />
         <Footer/>
       </div>
