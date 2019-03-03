@@ -1,4 +1,5 @@
 import React from 'react';
+import Ingredients from './Ingredients';
 
 function OfferTable({offers}) {
   return (
@@ -14,12 +15,6 @@ function OfferTable({offers}) {
       </thead>
       <tbody>
       {offers.map(offer => {
-        const offerDate = [
-          offer.validTo.getDate(),
-          offer.validTo.getMonth(),
-          offer.validTo.getFullYear()
-        ].join('.');
-        const isActive = offer.validTo > new Date();
         return (
           <tr className="Offer" key={offer.promoCode}>
             <td width="1%">
@@ -28,16 +23,16 @@ function OfferTable({offers}) {
                 src={offer.image}
                 alt={offer.title}/>
             </td>
-            <td>
-              <h5 className="Offer-title">{offer.title}</h5>
-              <small className="Offer-description">{offer.description}</small>
+            <td className="Offer-title">
+              <h5>{offer.title}</h5>
+              <Ingredients list={offer.ingredients}/>
             </td>
             <td className="Offer-promo-code">
-                <span className={isActive ? 'active' : 'inactive'}>
+                <span className={offer.isActive ? 'active' : 'inactive'}>
                   {offer.promoCode}
                 </span>
             </td>
-            <td className="Offer-valid-to">{offerDate}</td>
+            <td className="Offer-valid-to">{offer.validTo}</td>
             <td className="Offer-from-price">от {offer.fromPrice} руб</td>
           </tr>
         );

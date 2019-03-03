@@ -37,6 +37,10 @@
     width: 100px;
 }
 
+.Offer-title {
+    max-width: 300px;
+}
+
 .Offer-promo-code {
     font-weight: bold;
 }
@@ -47,6 +51,17 @@
 
 .Offer-promo-code .inactive {
     color: red;
+}
+
+.Ingredient-list {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.Ingredient-item {
+    font-size: .9em;
+    padding: 0 .3em;
+    color: #999;
 }
 
 .Footer {

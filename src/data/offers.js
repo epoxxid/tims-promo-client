@@ -6,48 +6,43 @@ import pizzaPhiladelphia from '../img/philadelphia-chicken.jpg';
 
 export default [
   {
-    id: 1,
-    title: 'Четыре сыра',
+    name: 'Четыре сыра',
     size: 30,
-    promoCode: 'C004',
-    validTo: new Date('Dec 21, 2019'),
-    fromPrice: 599.00,
+    code: 'C004',
+    validTo: '22.03.19',
+    price: 599.00,
     image: pizza4cheese
   },
-  {
-    id: 1,
-    title: 'Халапеньо BBQ',
+   {
+    name: 'Халапеньо BBQ',
     size: 25,
-    promoCode: 'A441',
-    validTo: new Date('Mar 1, 2019'),
-    fromPrice: 469.00,
+    code: 'C97',
+    validTo: '',
+    price: 469.00,
     image: pizzaJalapenoBbq
   },
   {
-    id: 1,
-    title: 'Суприм',
+    name: 'Суприм',
     size: 30,
-    promoCode: 'C008',
-    validTo: new Date('Apr 7, 2019'),
-    fromPrice: 599.00,
+    code: 'C008',
+    validTo: '22.03.18',
+    price: 599.00,
     image: pizzaSupreme
   },
   {
-    id: 1,
-    title: 'Чизбургер',
+    name: 'Чизбургер',
     size: 25,
-    promoCode: 'IN23',
-    validTo: new Date('Jun 2, 2019'),
-    fromPrice: 499.00,
+    code: 'C84',
+    validTo: '12.12.19',
+    price: 499.00,
     image: pizzaCheeseburger
   },
   {
-    id: 1,
-    title: 'Цыпленок Филадельфия',
+    name: 'Цыпленок Филадельфия',
     size: 25,
-    promoCode: 'C123',
-    validTo: new Date('Dec 21, 2019'),
-    fromPrice: 529.00,
+    code: 'C123',
+    validTo: '01.04.19',
+    price: 529.00,
     image: pizzaPhiladelphia
   },
-]
+];

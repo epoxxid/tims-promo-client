@@ -1,10 +1,13 @@
 import React from 'react';
+import {applyFilter} from "../actions";
+import {connect} from 'react-redux';
 
 class Filters extends React.Component {
+
   handleMaxPriceChanged(e) {
     const {filter} = this.props;
     const val = e.target.value ? parseFloat(e.target.value) : '';
-    return this.props.onFilterSet({
+    return this.props.applyFilter({
       ...filter,
       maxPrice: val
     });
@@ -12,14 +15,14 @@ class Filters extends React.Component {
 
   handleActiveOnlyChanged(e) {
     const {filter} = this.props;
-    return this.props.onFilterSet({
+    this.props.applyFilter({
       ...filter,
       activeOnly: e.target.checked
     });
   };
 
   render() {
-    const { filter }  = this.props;
+    const {filter} = this.props;
 
     return (
       <section className="Filters">
@@ -41,4 +44,14 @@ class Filters extends React.Component {
   };
 }
 
-export default Filters;
+const mapStateToProps = (state) => {
+  return {
+    filter: state.filter
+  }
+};
+
+const mapDispatchToProps = {
+    applyFilter
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filters);
