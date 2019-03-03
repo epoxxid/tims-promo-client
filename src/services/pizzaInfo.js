@@ -269,7 +269,7 @@ const pizzas = [
     ],
   },
   {
-    title: 'Пеперони',
+    title: 'Пепперони',
     image: 'https://timspizza.ru/upload/goods/c97c8801f3.jpg',
     ingredients: [
       ING.tomatoSauce,
